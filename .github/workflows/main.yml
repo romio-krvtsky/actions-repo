@@ -29,6 +29,7 @@ jobs:
     - name: Deploy to STAGE
       if: github.event_name == 'pull_request' && github.base_ref == 'main'
       run: echo "DEPLOY -> STAGE"
+      
     - name: Deploy to PROD
       if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
       run: echo "DEPLOY -> PROD"
